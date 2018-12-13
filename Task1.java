@@ -1,4 +1,4 @@
-public class Task1 {
+class Task1 {
 // Do not modify the code below except for replacing the "..."!  Don't
 // add anything (including "public" declarations), don't remove
 // anything (including "public" declarations). Don't wrap it in a
@@ -6,8 +6,12 @@ public class Task1 {
 // your IDE suggsts to change anything below, ignore your IDE. You are
 // welcome to add new classes! Please put them into separate files.
 
-        public static Codegen create () throws basic.CodegenException {
-            return new Codegen();
-        }
+    public static Codegen create () throws CodegenException {
+        return new Codegen() {
+        	public String codegen(Program p) throws CodegenException {
+        		_Codegen generator = new _Codegen();
+        		return generator.codegenProg(p);
+        	}
+        };
+    }
 }
-
